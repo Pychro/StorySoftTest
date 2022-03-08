@@ -16,19 +16,83 @@ namespace ConsoleApp1
         {
             public void iterate(int n)
             {
-                throw new NotImplementedException();
+                for (int i = 0; i < n; i++)
+                {
+                    Console.Write(i);
+                    if (i % 5 == 0)
+                    {
+                        Console.Write("Hello");
+                    }
+                    if (i % 7 == 0)
+                    {
+                        Console.Write("World");
+                    }
+                    Console.Write("\n");
+                }
             }
-            public void iterateWithQP(int n, int q, int p)
+
+            public void iterateWithQP(int n, int p, int q)
             {
-                throw new NotImplementedException();
+                for (int i = 0; i < n; i++)
+                {
+                    if (i == 5)
+                    {
+                        Console.Write(p);
+                    }
+                    else if (i == 7)
+                    {
+                        Console.Write(q);
+                        checker(q);
+                    }
+                    else
+                    {
+                        Console.Write(i);
+                        checker(p);
+                    }
+                    Console.Write("\n");
+                }
             }
+
+            private void checker(int i)
+            {
+                if (i % 5 == 0)
+                {
+                    Console.Write("Hello");
+                }
+                if (i % 7 == 0)
+                {
+                    Console.Write("World");
+                }
+            }
+
             public void fibCreator(int start, int length)
             {
-                throw new NotImplementedException();
+                int prev = 0;
+                int temp = 0;
+                int curr = start;
+                for (int i = 0; i < length; i++)
+                {
+                    Console.WriteLine(prev + curr);
+                    temp = prev;
+                    prev = curr;
+                    curr = prev + temp;
+                }
             }
-            public void xmlChecker(string input)
+
+            public void xmlChecker(string xmlInput)
             {
-                throw new NotImplementedException();
+                if (xmlInput.Contains("<root>") && xmlInput.Contains("<br />"))
+                {
+                    Console.WriteLine("The XML text is well-formed");
+                }
+                else if (xmlInput == null)
+                {
+                    Console.WriteLine("Invalid input: Input Null");
+                }
+                else
+                {
+                    Console.WriteLine("There are one or more errors in your XML text");
+                }
             }
         }
 
@@ -39,86 +103,7 @@ namespace ConsoleApp1
             userInput(Console.ReadLine());
         }
 
-    public void iterate(int n)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(i);
-                if (i % 5 == 0)
-                {
-                    Console.Write("Hello");
-                }
-                if (i % 7 == 0)
-                {
-                    Console.Write("World");
-                }
-                Console.Write("\n");
-            }
-        }
-
-        public void iterateWithQP(int n, int p, int q)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                if (i == 5)
-                {
-                    Console.Write(p);
-                }
-                else if (i == 7)
-                {
-                    Console.Write(q);
-                    checker(q);
-                }
-                else
-                {
-                    Console.Write(i);
-                    checker(p);
-                }
-                Console.Write("\n");
-            }
-        }
-
-        private void checker(int i)
-        {
-            if (i % 5 == 0)
-            {
-                Console.Write("Hello");
-            }
-            if (i % 7 == 0)
-            {
-                Console.Write("World");
-            }
-        }
-
-        public void fibCreator(int start, int length)
-        {
-            int prev = 0;
-            int temp = 0;
-            int curr = start;
-            for (int i = 0; i < length; i++)
-            {
-                Console.WriteLine(prev + curr);
-                temp = prev;
-                prev = curr;
-                curr = prev + temp;
-            }
-        }
-
-        public void xmlChecker(string xmlInput)
-        {
-            if(xmlInput.Contains("<root>") && xmlInput.Contains("<br />"))
-            {
-                Console.WriteLine("The XML text is well-formed");
-            }
-            else if(xmlInput == null)
-            {
-                Console.WriteLine("Invalid input: Input Null");
-            }
-            else
-            {
-                Console.WriteLine("There are one or more errors in your XML text");
-            }
-        }
+   
 
         public static void dialogOptions()
         {
